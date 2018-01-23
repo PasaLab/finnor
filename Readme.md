@@ -137,18 +137,18 @@ jobconf.ignore.degree.table=false
 ```
 
 The arguments contain the following configuration items:
-1\. `jobconf.similarity.function.class`, the class name of the similarity function:
+1. `jobconf.similarity.function.class`, the class name of the similarity function:
     _ `cn.edu.nju.pasalab.graph.analysis.vertexsimilarity.JaccardLikeIndexComputingFunction` for CN and Jaccard.
     _ `cn.edu.nju.pasalab.graph.analysis.vertexsimilarity.RALikeIndexComputingFunction` for RA
-2\. `jobconf.similarity.function.name`, the similarity function name: `CN`, `jaccard` and `RA`. 
-3\. `jobconf.input.path`, the path to the input adjacency file (or directory).
-4\. `jobconf.output.path`, the path to the output directory. The output will be stored in a directory containing several text files. Set this to `null` if you do not want the output which is usually very large. In all our experiments in the paper, we set this to `null`.
-5\. `partitioner.partition.number`, the number of graph partitions.
-6\. `partitioner.class.name`, the graph partitioner class. To get more details, see the source code `src\main\scala\cn\edu\nju\pasalab\graph\analysis\vertexsimilarity\framework\Partitioner.scala` file.
-7\. `graphadjstore.inmemory.compactstore`, set this to `false`.
-8\. `graphadjstore.inmemory.memory.threshold.mb`, FinNOR-MR stores the graph partition to the out-of-core RocksDB storage if it is larger than the threshold here(measured in Mbytes). This feature is still experimental. Set this value larger than the available memory to avoid triggering the RocksDB storage.
-9\. `jobconf.consider.vertex.order`, always set it to `true` in the PVSC problem.
-10\. `jobconf.ignore.degree.table`, ignore the degree lookup table preparation phase. Set this to `true` if you use the CN as the similarity function.
+2. `jobconf.similarity.function.name`, the similarity function name: `CN`, `jaccard` and `RA`. 
+3. `jobconf.input.path`, the path to the input adjacency file (or directory).
+4. `jobconf.output.path`, the path to the output directory. The output will be stored in a directory containing several text files. Set this to `null` if you do not want the output which is usually very large. In all our experiments in the paper, we set this to `null`.
+5. `partitioner.partition.number`, the number of graph partitions.
+6. `partitioner.class.name`, the graph partitioner class. To get more details, see the source code `src\main\scala\cn\edu\nju\pasalab\graph\analysis\vertexsimilarity\framework\Partitioner.scala` file.
+7. `graphadjstore.inmemory.compactstore`, set this to `false`.
+8. `graphadjstore.inmemory.memory.threshold.mb`, FinNOR-MR stores the graph partition to the out-of-core RocksDB storage if it is larger than the threshold here(measured in Mbytes). This feature is still experimental. Set this value larger than the available memory to avoid triggering the RocksDB storage.
+9. `jobconf.consider.vertex.order`, always set it to `true` in the PVSC problem.
+10. `jobconf.ignore.degree.table`, ignore the degree lookup table preparation phase. Set this to `true` if you use the CN as the similarity function.
 
 #### FinNOR-MR-MEM
 
@@ -178,15 +178,16 @@ jobconf.ignore.degree.table=false
 ```
 
 The command contains the following configuration items:
-1\. `jobconf.similarity.function.class`, the class name of the similarity function:
+
+1. `jobconf.similarity.function.class`, the class name of the similarity function:
     _ `cn.edu.nju.pasalab.graph.analysis.vertexsimilarity.JaccardLikeIndexComputingFunction` for CN and Jaccard.
     _ `cn.edu.nju.pasalab.graph.analysis.vertexsimilarity.RALikeIndexComputingFunction` for RA
-2\. `jobconf.similarity.function.name`, the similarity function name: `CN`, `jaccard` and `RA`. 
-3\. `jobconf.input.path`, the path to the input adjacency file (or directory).
-4\. `jobconf.output.path`, the path to the output directory. The output will be stored in a directory containing several text files. Set this to `null` if you do not want the output which is usually very large. In all our experiments in the paper, we set this to `null`.
-5\. `jobconf.db.batch.query.size=1000`, the batch size. Several vertices form a group. FinNOR-MR-MEM queries the adjacency sets of the neighbors of the vertices in a group in a batch.
-6\. `jobconf.consider.vertex.order`, always be `true` in the PVSC problem.
-7\. `jobconf.ignore.degree.table`, ignore the degree lookup table preparation phase. Set this to `true` if you use the CN as the similarity function.
+2. `jobconf.similarity.function.name`, the similarity function name: `CN`, `jaccard` and `RA`. 
+3. `jobconf.input.path`, the path to the input adjacency file (or directory).
+4. `jobconf.output.path`, the path to the output directory. The output will be stored in a directory containing several text files. Set this to `null` if you do not want the output which is usually very large. In all our experiments in the paper, we set this to `null`.
+5. `jobconf.db.batch.query.size=1000`, the batch size. Several vertices form a group. FinNOR-MR-MEM queries the adjacency sets of the neighbors of the vertices in a group in a batch.
+6. `jobconf.consider.vertex.order`, always be `true` in the PVSC problem.
+7. `jobconf.ignore.degree.table`, ignore the degree lookup table preparation phase. Set this to `true` if you use the CN as the similarity function.
 
 ## Output
 
